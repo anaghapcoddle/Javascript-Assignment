@@ -132,7 +132,8 @@ function getSelectedValue() {
   const selectedValue = document.getElementById('selectNumbers').value;
   function checkIfValueIsNine() {
     if (selectedValue === '9') {
-      document.getElementById('messageForSelectBox').innerHTML = '9 is fully occupied please select another number.';
+      document.getElementById('messageForSelectBox').innerHTML = '9 is fully occupied. Please select another number.';
+      document.getElementById('selectNumbers').value = '10';
     } else {
       document.getElementById('messageForSelectBox').innerHTML = `You selected : ${selectedValue}`;
     }
@@ -160,7 +161,7 @@ function createButton() {
     btn.innerText = arrayOfLanguages[i];
     btnContainer.appendChild(btn);
     btn.addEventListener('click', () => {
-      document.getElementById('messageForSelectBox').innerHTML = `${arrayOfLanguages[i]}`;
+      document.getElementById('msgContainer').innerHTML = `${arrayOfLanguages[i]}`;
     });
   }
 }
@@ -181,6 +182,7 @@ document.getElementById('titleBtn').addEventListener('click', changeTitle);
 //9. When the control+enter key is pressed show an alert message.
 
 window.addEventListener('keydown', (event) => {
+  // eslint-disable-next-line eqeqeq
   if (event.ctrlKey && event.keyCode == '13') {
     alert('You have now pressed \'control+enter\' key');
   }
