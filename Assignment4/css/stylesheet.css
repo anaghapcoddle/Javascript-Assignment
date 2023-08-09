@@ -1,0 +1,17 @@
+#useEvents{
+    height: 300px;
+    width: 300px;
+    background-color: brown;
+}
+
+#detailsText{
+    display: none;
+}
+
+#messageForSelectBox{
+    width: 400px;
+}
+
+#more{
+    background-color: pink;
+}
