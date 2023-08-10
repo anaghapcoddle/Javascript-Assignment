@@ -139,9 +139,9 @@ class Employee{
   }
 }
 
-let employee1 = new Employee("Mustang");
-let employee2 = new Employee("Corvette");
-let employee3 = new Employee("Challenger");
+let employee1 = new Employee("Anagha");
+let employee2 = new Employee("Aswani");
+let employee3 = new Employee("Arathi");
 
 console.log(Employee.numberOfEmployees);
 Employee.showMessage();
