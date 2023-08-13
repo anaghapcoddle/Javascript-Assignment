@@ -57,4 +57,5 @@ let strWithoutTemplateLiterals = (name + " " + num + " " +bignum + " " +complete
 console.log(strWithoutTemplateLiterals);
 
 /* -------------    QUESTION 3 ---------------- */
+
 alert("This is an alert");
