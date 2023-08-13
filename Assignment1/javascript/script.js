@@ -1,22 +1,24 @@
-/* -------------    QUESTION 1 ---------------- */
+/* eslint-disable no-console */
+
+/*1. Create variables with different data types available in JS and print their data
+types along with each variable name in the console. */
+
 //Add the complete qn as a comment
 // Use camel case for variable names.
 // Check the variable declarations in JavaScript and select the one that is appropriate for your variables.
 
-//Premitive Data types
-
 //String  data type
-let name = "Anagha";
-console.log("The data type of the variable 'name' is: " + typeof name);
+const studentName = 'Emma';
+console.log(`The data type of the variable 'name' is: ${typeof studentName}`);
 
 //Number data type
 //Why did you used let for decalaration?
 
-let num = 15;
-console.log("The data type of the variable 'num' is: " + typeof num);
+const studentAge = 15;
+console.log(`The data type of the variable 'num' is: ${typeof studentAge}`);
 
 //BigInt data type
-let bignum = BigInt(98722479429853987423);
+let phoneNumber = BigInt(9595262520);
 console.log("The data type of the variable 'bignum' is: " + typeof bignum);
 
 //Boolean data type
