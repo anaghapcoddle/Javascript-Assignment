@@ -78,3 +78,5 @@ console.log(strWithoutTemplateLiterals);
 
 /* -------------    QUESTION 3 ---------------- */
 alert("This is an alert");
+
+//added comment to pull to master
