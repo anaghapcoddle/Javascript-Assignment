@@ -19,5 +19,3 @@ function updateImg(type) {
   document.getElementById('imgs').src = `./images/${a[selectedIndex]}`;
   
 }
-
-//change to pull to master
