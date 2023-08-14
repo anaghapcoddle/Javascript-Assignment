@@ -1,3 +1,4 @@
+/* eslint-disable no-irregular-whitespace */
 /* eslint-disable no-console */
 //Give proper names
 const arrayOfIntegers = ['1', '2', '3', '4', '5', '6', '7'];
@@ -29,7 +30,7 @@ arrayToPrintDatatype.forEach((value, index) => {
 /* c. Remove last three items of the array, use JS provided array method, then console the array
  and then add "one" and "two" (strings) to the beginning of the array and console the array. */
 
-let arrayToRemoveItems = ['1', '2', '3', '4', '5', '6', '7'];
+const arrayToRemoveItems = ['1', '2', '3', '4', '5', '6', '7'];
 for (let i = 0; i < 3; i += 1) {
   arrayToRemoveItems.pop();
 }
@@ -57,69 +58,81 @@ console.log(sum);
 
 /* e. Filter out item "3" from the array and console the array (use any array method)*/
 //read the question properly
-let indexValue = arr.indexOf("3");
-arr.splice(indexValue, 1);
-console.log(arr);
 
-// /* f. Iterate the array and console the item, when item is either "3", "6" or "7" */
+const arrayToFilter = ['1', '2', '3', '4', '5', '6', '7'];
+const filteredArray = arrayToFilter.filter((value) => value !== '3');
+console.log(filteredArray);
 
-// arr = ["1", "2", "3", "4", "5", "6", "7"];
+/* f. Iterate the array and console the item, when item is either "3", "6" or "7" */
 
-// arr.forEach((n) => {
-//   //use ===
-//   if (n == "3" || n == "6" || n == "7") {
-//     console.log(n);
-//   }
-// });
+const arrayToCheck = ['1', '2', '3', '4', '5', '6', '7'];
 
-// /* g. [1, 2, "3", 4, 5, 6, "7"]  Compare this array with the above given array and console only if both items 
-// of the array have same data type. (Compare each item of this array with each item of the other array) */
-// //write the output and describe it's working
-// let arr2 = [1, 2, "3", 4, 5, 6, "7"];
+arrayToCheck.forEach((item) => {
+  //use ===
+  if (item === '3' || item === '6' || item === '7') {
+    console.log(item);
+  }
+});
 
-// arr.forEach((num1, index) => {
-//   let num2 = arr2[index];
-//   if (typeof arr[index] == typeof arr2[index]) {
-//     console.log(+num1, +num2);
-//   }
-// });
+/* g. [1, 2, "3", 4, 5, 6, "7"]  Compare this array with the above given array and console only
+if both items of the array have same data type.
+(Compare each item of this array with each item of the other array) */
+//write the output and describe it's working
 
-// /* h. [0,2,3,7,5,6,8] iterate the array and multiply each item by its 
-// index value and console the result only if result is greater than 40. */
+const firstArray = ['1', '2', '3', '4', '5', '6', '7'];
+const secondArray = [1, 2, '3', 4, 5, 6, '7'];
 
-// let arr3 = [0, 2, 3, 7, 5, 6, 8];
+firstArray.forEach((valueOfFirstArray, index) => {
+  const valueOfSecondArray = secondArray[index];
+  if (typeof firstArray[index] === typeof secondArray[index]) {
+    console.log(+valueOfFirstArray, +valueOfSecondArray);
+  }
+});
 
-// arr3.forEach((i) => {
-//   let multipliedValue = arr3[i] * i;
-//   if (multipliedValue > 40) {
-//     console.log(multipliedValue);
-//   }
-// });
+/*For each item of the 'firstArray', the variable 'valueOfSecondArray' is set as the item with
+ equivalent index value in the second array. We can use this method as the length of both the arrays
+ are same. Then using a if condition, it is checked whether the data type of the item in firstArray
+ equals to the datatype of corresponding item in Second Array.
+ For example, valueOfSecondArray = secondArray[0];
+ if (type of typeof firstArray[0] === typeof secondArray[0]),
+ i.e., (type of '1' === typeof 1, then it consoles both '1' and 1. Otherwise it does not console.*/
 
-// // i. Create two arrays with five items each and merge the array into a single array and then console it.
-// let firstArray = [1, 2, 3];
-// let secondArray = [6, 7, 8];
+/* h. [0,2,3,7,5,6,8] iterate the array and multiply each item by its
+index value and console the result only if result is greater than 40. */
 
-// let mergedArray = firstArray.concat(secondArray);
-// console.log(mergedArray);
+const arrayToMultiply = [0, 2, 3, 7, 5, 6, 8];
 
-// /* 2.   *
-//        * *
-//       * * *
-//      * * * *
-//     * * * * *
+arrayToMultiply.forEach((index) => {
+  const multipliedValue = arrayToMultiply[index] * index;
+  if (multipliedValue > 40) {
+    console.log(multipliedValue);
+  }
+});
 
-// ​Console this star pattern */
+/* i. Create two arrays with five items each and merge the array into a single array and
+then console it. */
+const firstArrayWithFiveItems = [1, 2, 3, 4, 5];
+const secondArrayWithFiveItems = [10, 9, 8, 7, 6];
 
-// let n = 5;
-// str = "";
-// for (let i = 1; i <= n; i++) {
-//   for (let j = 1; j <= n - i; j++) {
-//     str += " ";
-//   }
-//   for (let k = 0; k < i; k++) {
-//     str += " *";
-//   }
-//   str += "\n";
-// }
-// console.log(str);
+const mergedArray = firstArrayWithFiveItems.concat(secondArrayWithFiveItems);
+console.log(mergedArray);
+
+/* 2.   *
+       * *
+      * * *
+     * * * *
+    * * * * *
+​Console this star pattern */
+
+const n = 5;
+let str = '';
+for (let i = 1; i <= n; i += 1) {
+  for (let j = 1; j <= n - i; j += 1) {
+    str += ' ';
+  }
+  for (let k = 0; k < i; k += 1) {
+    str += ' *';
+  }
+  str += '\n';
+}
+console.log(str);
