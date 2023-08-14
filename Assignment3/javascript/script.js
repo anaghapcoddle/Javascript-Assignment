@@ -2,34 +2,34 @@
 /* 1. ['car', 1, 5, 'js', 'node js', 'mysql', 'sql' ] : Use switch statement inside a map function
 and console each item by using switch statement. */
 
-let array1 = ['car', 1, 5, 'js', 'node js', 'mysql', 'sql'];
+const array1 = ['car', 1, 5, 'js', 'node js', 'mysql', 'sql'];
 
 // why did u reassign to array1 variable ?
 
-array1 = array1.map((item, index) => {
-    const n = index;
-    switch (n) {
-        case n:
-            console.log(item);
-            break;
-        default:
-            console.log('Item not found');
-            break;
-    }
-    return array1;
+array1.map((item, index) => {
+  const n = index;
+  switch (n) {
+    case n:
+      console.log(item);
+      break;
+    default:
+      console.log('Item not found');
+      break;
+  }
+  return array1;
 });
 
 /* 2. [1, 2, 3, 4. 5, 6] : Write a closure function to delete indexes 5 and 2 of this array. */
 
 console.log('\n');
 const deleteArrayItems = (function () {
-    const closureFnArray = [1, 2, 3, 4.5, 6];
-    return function () {
-        closureFnArray.splice(5, 1);
-        closureFnArray.splice(2, 1);
-        console.log(closureFnArray);
-    };
-})();
+  const closureFnArray = [1, 2, 3, 4.5, 6];
+  return function () {
+    closureFnArray.splice(5, 1);
+    closureFnArray.splice(2, 1);
+    console.log(closureFnArray);
+  };
+}());
 
 deleteArrayItems();
 
@@ -39,15 +39,15 @@ deleteArrayItems();
 console.log('\n');
 
 class Constructor1 {
-    constructor(arr1) {
-        this.arr1 = arr1;
-    }
+  constructor(array) {
+    this.array = array;
+  }
 
-    printElements() {
-        this.arr1.forEach((ele) => {
-            console.log(ele);
-        });
-    }
+  printElements() {
+    this.array.forEach((item) => {
+      console.log(item);
+    });
+  }
 }
 
 const constructorArray = ['car', 1, 5, 'js', 'node js', 'mysql', 'sql'];
@@ -67,17 +67,16 @@ console.log('\n');
 const numbersArray = [1, 2, 3, 4, 5.6];
 
 function checkArrayItem(arr, item) {
-    if (arr.includes(item)) {
-        console.log('Element already exists in array');
-        const index = arr.indexOf(item);
-        arr.splice(index, 1);
-    } else {
-        numbersArray.push(item);
-        console.log(
-            'Element does not exist in the array, The element is now inserted into the array.'
-        );
-    }
-    console.log(`The output is : ${numbersArray}`);
+  const arrayToDeletePassedItem = numbersArray;
+  if (arr.includes(item)) {
+    console.log('Element already exists in array');
+    const index = arr.indexOf(item);
+    arr.splice(index, 1);
+  } else {
+    arrayToDeletePassedItem.push(item);
+    console.log('Element does not exist in the array, The element is now inserted into the array.');
+  }
+  console.log(`The output is : ${arrayToDeletePassedItem}`);
 }
 
 checkArrayItem(numbersArray, 19);
@@ -86,8 +85,8 @@ checkArrayItem(numbersArray, 19);
 
 console.log('\n');
 (function () {
-    console.log('My name is Anagha.');
-})();
+  console.log('My name is Anagha.');
+}());
 
 /* 6. {a:'one', b:'2', f:'5', c:'33', p:'do', q:'one' }: Using this object make an array
 consisting of all the keys of the given object in reverse order.
@@ -95,12 +94,12 @@ consisting of all the keys of the given object in reverse order.
 
 console.log('\n');
 const obj = {
-    a: 'one',
-    b: '2',
-    f: '5',
-    c: '33',
-    p: 'do',
-    q: 'one',
+  a: 'one',
+  b: '2',
+  f: '5',
+  c: '33',
+  p: 'do',
+  q: 'one',
 };
 const keyArray = Object.keys(obj);
 const reversedArray = keyArray.reverse();
@@ -114,13 +113,13 @@ the item with id as 24 if it exists ) */
 
 console.log('\n');
 const outerObj = {
-    data: [
-        { a: 'one', id: '22' },
-        { a: 'four', id: '7' },
-        { a: 'six', b: '2' },
-        { a: 'sixty', id: '24' },
-        { a: 'five', id: '212' },
-    ],
+  data: [
+    { a: 'one', id: '22' },
+    { a: 'four', id: '7' },
+    { a: 'six', b: '2' },
+    { a: 'sixty', id: '24' },
+    { a: 'five', id: '212' },
+  ],
 };
 
 const outerObjArr = Object.entries(outerObj);
@@ -128,12 +127,12 @@ const dataArr = outerObjArr[0];
 const arrOfObjects = dataArr[1];
 
 arrOfObjects.forEach((ele) => {
-    const eleVal = Object.values(ele);
+  const eleVal = Object.values(ele);
 
-    if (eleVal.includes('24')) {
-        const ind = arrOfObjects.indexOf(ele);
-        arrOfObjects.splice(ind, 1);
-    }
+  if (eleVal.includes('24')) {
+    const ind = arrOfObjects.indexOf(ele);
+    arrOfObjects.splice(ind, 1);
+  }
 });
 
 console.log('The output object is : ', outerObj);
@@ -151,7 +150,7 @@ const stringLength = string.length;
 
 // which is the 8th character?
 
-const EigthCharacter = string.charAt(8 + 1);
+const EigthCharacter = string.charAt(8 - 1);
 
 //c) Execute the above code from browser console.
 
@@ -169,9 +168,7 @@ console.log(string.replace('King', 'Emperor'));
 //f) Insert the string "new” before the word "King".
 
 const indexOfKing = string.indexOf('King');
-const newString = `${string.slice(0, indexOfKing)}new ${string.slice(
-    indexOfKing
-)}`;
+const newString = `${string.slice(0, indexOfKing)}new ${string.slice(indexOfKing)}`;
 console.log(newString);
 
 //g) Get the words in string as an array.
@@ -198,6 +195,8 @@ console.log('The number of occurences of "of" is :', countOfOf);
 // reduce the length of string using js and then pad
 
 const stringToPad = 'Javascript is the King of the web.';
-const paddedString = stringToPad.padEnd(30, '*');
+const stringWithLengthReduced = stringToPad.slice(0, 22);
+
+const paddedString = stringWithLengthReduced.padEnd(30, '*');
 console.log(paddedString);
-console.log(stringToPad.length); //String did not Pad because its length is already greater than 30.
+console.log(paddedString.length);
