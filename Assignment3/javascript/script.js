@@ -178,3 +178,4 @@ const stringToPad = 'Javascript is the King of the web.';
 const paddedString = stringToPad.padEnd(30, '*');
 console.log(paddedString);
 console.log(stringToPad.length); //String did not Pad because its length is already greater than 30.
+
