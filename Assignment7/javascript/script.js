@@ -1,3 +1,5 @@
+/* eslint-disable function-call-argument-newline */
+/* eslint-disable function-paren-newline */
 const box1 = document.querySelector('.box1');
 const box2 = document.querySelector('.box2');
 const box3 = document.querySelector('.box3');
@@ -10,15 +12,15 @@ const box9 = document.querySelector('.box9');
 const winnerPrintSpace = document.querySelector('.winner-print-space');
 
 function checkWin() {
-  let box1Value = document.querySelector('.box1').textContent;
-  let box2Value = document.querySelector('.box2').textContent;
-  let box3Value = document.querySelector('.box3').textContent;
-  let box4Value = document.querySelector('.box4').textContent;
-  let box5Value = document.querySelector('.box5').textContent;
-  let box6Value = document.querySelector('.box6').textContent;
-  let box7Value = document.querySelector('.box7').textContent;
-  let box8Value = document.querySelector('.box8').textContent;
-  let box9Value = document.querySelector('.box9').textContent;
+  const box1Value = document.querySelector('.box1').textContent;
+  const box2Value = document.querySelector('.box2').textContent;
+  const box3Value = document.querySelector('.box3').textContent;
+  const box4Value = document.querySelector('.box4').textContent;
+  const box5Value = document.querySelector('.box5').textContent;
+  const box6Value = document.querySelector('.box6').textContent;
+  const box7Value = document.querySelector('.box7').textContent;
+  const box8Value = document.querySelector('.box8').textContent;
+  const box9Value = document.querySelector('.box9').textContent;
 
   function winnerColorAndSize(boxname1, boxname2, boxname3) {
     boxname1.style.color = 'red';
@@ -29,7 +31,8 @@ function checkWin() {
     boxname3.style.fontSize = '100px';
   }
 
-  function disableNonWinnerCells(boxname1,boxname2,boxname3,boxname4,boxname5,boxname6,boxfn1,boxfn2,boxfn3,boxfn4,boxfn5,boxfn6) {
+  function disableNonWinnerCells(boxname1, boxname2, boxname3, boxname4, boxname5, boxname6,
+    boxfn1, boxfn2, boxfn3, boxfn4, boxfn5, boxfn6) {
     boxname1.removeEventListener('click', boxfn1);
     boxname2.removeEventListener('click', boxfn2);
     boxname3.removeEventListener('click', boxfn3);
@@ -38,103 +41,87 @@ function checkWin() {
     boxname6.removeEventListener('click', boxfn6);
   }
 
-  if (box1Value == 'X' && box2Value == 'X' && box3Value == 'X') {
+  if (box1Value === 'X' && box2Value === 'X' && box3Value === 'X') {
     winnerPrintSpace.innerHTML = 'Player \'X\' has won';
     winnerColorAndSize(box1, box2, box3);
-    disableNonWinnerCells(box4,box5,box6,box7,box8,box9,box4Fn,box5Fn,box6Fn,box7Fn,box8Fn,box9Fn);
-  }
-
-  else if (box1Value == 'O' && box2Value == 'O' && box3Value == 'O') {
+    disableNonWinnerCells(box4, box5, box6, box7, box8, box9, box4Fn, box5Fn,
+      box6Fn, box7Fn, box8Fn, box9Fn);
+  } else if (box1Value === 'O' && box2Value === 'O' && box3Value === 'O') {
     winnerPrintSpace.innerHTML = 'Player \'O\' has won';
     winnerColorAndSize(box1, box2, box3);
-    disableNonWinnerCells(box4,box5,box6,box7,box8,box9,box4Fn,box5Fn,box6Fn,box7Fn,box8Fn,box9Fn);
-  }
-
-  else if (box1Value == 'X' && box4Value == 'X' && box7Value == 'X') {
+    disableNonWinnerCells(box4, box5, box6, box7, box8, box9, box4Fn, box5Fn,
+      box6Fn, box7Fn, box8Fn, box9Fn);
+  } else if (box1Value === 'X' && box4Value === 'X' && box7Value === 'X') {
     winnerPrintSpace.innerHTML = 'Player \'X\' has won';
     winnerColorAndSize(box1, box4, box7);
-    disableNonWinnerCells(box2,box3,box5,box6,box8,box9,box2Fn,box3Fn,box5Fn,box6Fn,box8Fn,box9Fn);
-  }
-
-  else if (box1Value == 'O' && box4Value == 'O' && box7Value == 'O') {
+    disableNonWinnerCells(box2, box3, box5, box6, box8, box9, box2Fn, box3Fn,
+      box5Fn, box6Fn, box8Fn, box9Fn);
+  } else if (box1Value === 'O' && box4Value === 'O' && box7Value === 'O') {
     winnerPrintSpace.innerHTML = 'Player \'O\' has won';
     winnerColorAndSize(box1, box4, box7);
-    disableNonWinnerCells(box2,box3,box5,box6,box8,box9,box2Fn,box3Fn,box5Fn,box6Fn,box8Fn,box9Fn);
-  }
-
-  else if (box1Value == 'X' && box5Value == 'X' && box9Value == 'X') {
+    disableNonWinnerCells(box2, box3, box5, box6, box8, box9, box2Fn,
+      box3Fn, box5Fn, box6Fn, box8Fn, box9Fn);
+  } else if (box1Value === 'X' && box5Value === 'X' && box9Value === 'X') {
     winnerPrintSpace.innerHTML = 'Player \'X\' has won';
     winnerColorAndSize(box1, box5, box9);
-    disableNonWinnerCells(box2,box3,box4,box6,box7,box8,box2Fn,box3Fn,box4Fn,box6Fn,box7Fn,box8Fn);
-  }
-
-  else if (box1Value == 'O' && box5Value == 'O' && box9Value == 'O') {
+    disableNonWinnerCells(box2, box3, box4, box6, box7, box8, box2Fn,
+      box3Fn, box4Fn, box6Fn, box7Fn, box8Fn);
+  } else if (box1Value === 'O' && box5Value === 'O' && box9Value === 'O') {
     winnerPrintSpace.innerHTML = 'Player \'O\' has won';
     winnerColorAndSize(box1, box5, box9);
-    disableNonWinnerCells(box2,box3,box4,box6,box7,box8,box2Fn,box3Fn,box4Fn,box6Fn,box7Fn,box8Fn);
-  }
-
-  else if (box2Value == 'X' && box5Value == 'X' && box8Value == 'X') {
+    disableNonWinnerCells(box2, box3, box4, box6, box7, box8,
+      box2Fn, box3Fn, box4Fn, box6Fn, box7Fn, box8Fn);
+  } else if (box2Value === 'X' && box5Value === 'X' && box8Value === 'X') {
     winnerPrintSpace.innerHTML = 'Player \'X\' has won';
     winnerColorAndSize(box2, box5, box8);
-    disableNonWinnerCells(box1,box3,box4,box6,box7,box9,box1Fn,box3Fn,box4Fn,box6Fn,box7Fn,box9Fn);
-  }
-
-  else if (box2Value == 'O' && box5Value == 'O' && box8Value == 'O') {
+    disableNonWinnerCells(box1, box3, box4, box6, box7,
+      box9, box1Fn, box3Fn, box4Fn, box6Fn, box7Fn, box9Fn);
+  } else if (box2Value === 'O' && box5Value === 'O' && box8Value === 'O') {
     winnerPrintSpace.innerHTML = 'Player \'O\' has won';
     winnerColorAndSize(box2, box5, box8);
-    disableNonWinnerCells(box1,box3,box4,box6,box7,box9,box1Fn,box3Fn,box4Fn,box6Fn,box7Fn,box9Fn);
-  }
-
-  else if (box3Value == 'X' && box5Value == 'X' && box7Value == 'X') {
+    disableNonWinnerCells(box1, box3, box4, box6, box7, box9, box1Fn,
+      box3Fn, box4Fn, box6Fn, box7Fn, box9Fn);
+  } else if (box3Value === 'X' && box5Value === 'X' && box7Value === 'X') {
     winnerPrintSpace.innerHTML = 'Player \'X\' has won';
     winnerColorAndSize(box3, box5, box7);
-    disableNonWinnerCells(box1,box2,box4,box6,box8,box9,box1Fn,box2Fn,box4Fn,box6Fn,box8Fn,box9Fn);
-  }
-
-  else if (box3Value == 'O' && box5Value == 'O' && box7Value == 'O') {
+    disableNonWinnerCells(box1, box2, box4, box6, box8, box9, box1Fn,
+      box2Fn, box4Fn, box6Fn, box8Fn, box9Fn);
+  } else if (box3Value === 'O' && box5Value === 'O' && box7Value === 'O') {
     winnerPrintSpace.innerHTML = 'Player \'O\' has won';
     winnerColorAndSize(box3, box5, box7);
-    disableNonWinnerCells(box1,box2,box4,box6,box8,box9,box1Fn,box2Fn,box4Fn,box6Fn,box8Fn,box9Fn);
-  }
-
-  else if (box3Value == 'X' && box6Value == 'X' && box9Value == 'X') {
+    disableNonWinnerCells(box1, box2, box4, box6, box8, box9, box1Fn,
+      box2Fn, box4Fn, box6Fn, box8Fn, box9Fn);
+  } else if (box3Value === 'X' && box6Value === 'X' && box9Value === 'X') {
     winnerPrintSpace.innerHTML = 'Player \'X\' has won';
     winnerColorAndSize(box3, box6, box9);
-    disableNonWinnerCells(box1,box2,box4,box5,box7,box8,box1Fn,box2Fn,box4Fn,box5Fn,box7Fn,box8Fn);
-  }
-
-  else if (box3Value == 'O' && box6Value == 'O' && box9Value == 'O') {
+    disableNonWinnerCells(box1, box2, box4, box5, box7, box8, box1Fn,
+      box2Fn, box4Fn, box5Fn, box7Fn, box8Fn);
+  } else if (box3Value === 'O' && box6Value === 'O' && box9Value === 'O') {
     winnerPrintSpace.innerHTML = 'Player \'O\' has won';
     winnerColorAndSize(box3, box6, box9);
-    disableNonWinnerCells(box1,box2,box4,box5,box7,box8,box1Fn,box2Fn,box4Fn,box5Fn,box7Fn,box8Fn);
-  }
-
-  else if (box4Value == 'X' && box5Value == 'X' && box6Value == 'X') {
+    disableNonWinnerCells(box1, box2, box4, box5, box7, box8, box1Fn,
+      box2Fn, box4Fn, box5Fn, box7Fn, box8Fn);
+  } else if (box4Value === 'X' && box5Value === 'X' && box6Value === 'X') {
     winnerPrintSpace.innerHTML = 'Player \'X\' has won';
     winnerColorAndSize(box4, box5, box6);
-    disableNonWinnerCells(box1,box2,box3,box7,box8,box9,box1Fn,box2Fn,box3Fn,box7Fn,box8Fn,box9Fn);
-  }
-
-  else if (box4Value == 'O' && box5Value == 'O' && box6Value == 'O') {
+    disableNonWinnerCells(box1, box2, box3, box7, box8, box9, box1Fn,
+      box2Fn, box3Fn, box7Fn, box8Fn, box9Fn);
+  } else if (box4Value === 'O' && box5Value === 'O' && box6Value === 'O') {
     winnerPrintSpace.innerHTML = 'Player \'O\' has won';
     winnerColorAndSize(box4, box5, box6);
-    disableNonWinnerCells(box1,box2,box3,box7,box8,box9,box1Fn,box2Fn,box3Fn,box7Fn,box8Fn,box9Fn);
-  }
-
-  else if (box7Value == 'X' && box8Value == 'X' && box9Value == 'X') {
+    disableNonWinnerCells(box1, box2, box3, box7, box8, box9, box1Fn,
+      box2Fn, box3Fn, box7Fn, box8Fn, box9Fn);
+  } else if (box7Value === 'X' && box8Value === 'X' && box9Value === 'X') {
     winnerPrintSpace.innerHTML = 'Player \'X\' has won';
     winnerColorAndSize(box7, box8, box9);
-    disableNonWinnerCells(box1,box2,box3,box4,box5,box6,box1Fn,box2Fn,box3Fn,box4Fn,box5Fn,box6Fn);
-  }
-
-  else if (box7Value == 'O' && box8Value == 'O' && box9Value == 'O') {
+    disableNonWinnerCells(box1, box2, box3, box4, box5, box6, box1Fn,
+      box2Fn, box3Fn, box4Fn, box5Fn, box6Fn);
+  } else if (box7Value === 'O' && box8Value === 'O' && box9Value === 'O') {
     winnerPrintSpace.innerHTML = 'Player \'O\' has won';
     winnerColorAndSize(box7, box8, box9);
-    disableNonWinnerCells(box1,box2,box3,box4,box5,box6,box1Fn,box2Fn,box3Fn,box4Fn,box5Fn,box6Fn);
-  }
-
-  else if (box1Value !== '' && box2Value !== '' && box3Value !== '' && box4Value !== ''
+    disableNonWinnerCells(box1, box2, box3, box4, box5, box6, box1Fn,
+      box2Fn, box3Fn, box4Fn, box5Fn, box6Fn);
+  } else if (box1Value !== '' && box2Value !== '' && box3Value !== '' && box4Value !== ''
   && box5Value !== '' && box6Value !== '' && box7Value !== '' && box8Value !== '' && box9Value !== '') {
     winnerPrintSpace.innerHTML = 'DRAW!!';
   }
@@ -177,7 +164,7 @@ function box3Fn() {
   if (lastPlayer === 'o') {
     box3.innerHTML = 'X';
     lastPlayer = 'x';
-    box3.removeEventListener('click',box3Fn);
+    box3.removeEventListener('click', box3Fn);
   } else {
     box3.innerHTML = 'O';
     lastPlayer = 'o';
