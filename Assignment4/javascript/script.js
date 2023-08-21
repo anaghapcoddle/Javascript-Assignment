@@ -157,9 +157,11 @@ const arrayOfLanguages = ['JavaScript', 'PHP', 'Python', 'Java', 'Ruby', 'Perl',
 
 function createButton() {
   for (let i = 0; i < arrayOfLanguages.length; i += 1) {
+    // document.getElementById("btnContainer").innerHTML += "<button type='button'> " +
+    // arrayOfLanguages[i] + "</button>";
     const btn = document.createElement('button');
     btn.innerText = arrayOfLanguages[i];
-    btnContainer.appendChild(btn);
+    document.getElementById('b').innerText(btn);
     btn.addEventListener('click', () => {
       document.getElementById('msgContainer').innerHTML = `${arrayOfLanguages[i]}`;
     });
