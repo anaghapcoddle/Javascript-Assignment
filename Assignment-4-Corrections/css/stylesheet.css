@@ -1,0 +1,17 @@
+#bgChangingContainer{
+    height: 300px;
+    width: 300px;
+    background-color: brown;
+}
+
+#messageForSelectBox{
+    width: 400px;
+}
+
+/* #btnContainer{
+    width: 1000px;
+} */
+
+#msgContainer{
+    width: 400px;
+}
