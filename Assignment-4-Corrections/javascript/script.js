@@ -171,7 +171,13 @@ an error message, and stay on the same page when submitted(it shouldn't refresh)
 
 function changeTitle() {
   const titleInputed = document.getElementById('tabTitle').value;
-  document.title = titleInputed;
+  if (titleInputed.length > 5) {
+    const titleErrorMessage = document.getElementById('title-error-message');
+    titleErrorMessage.innerText = 'The title should be less than 50 charecters.';
+  }
+  else{
+    document.title = titleInputed;
+  }
 }
 
 document.getElementById('titleBtn').addEventListener('click', changeTitle);

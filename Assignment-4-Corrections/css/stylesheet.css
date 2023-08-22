@@ -8,10 +8,10 @@
     width: 400px;
 }
 
-/* #btnContainer{
-    width: 1000px;
-} */
-
 #msgContainer{
     width: 400px;
+}
+
+#title-error-message{
+    color: red;
 }
