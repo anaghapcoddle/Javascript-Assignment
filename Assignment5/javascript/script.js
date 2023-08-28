@@ -63,16 +63,16 @@ function formValidate(event) {
   }
 
   if (valid === true) {
+    // eslint-disable-next-line max-len
     let storeAsObject = { Name: name.value, Phone: phone.value, Place: place.value, Company: company.value, Pincode: pincode.value };
     let storeAsJsonString = JSON.stringify(storeAsObject);
     localStorage.setItem('Details', storeAsJsonString);
 
-    const inputToClear = document.querySelectorAll(".form-input-space");
+    const inputToClear = document.querySelectorAll('.form-input-space');
     inputToClear.forEach((element) => {
-      element.value = "";
+      element.value = '';
     });
   }
-
 }
 
 // Submit the values only when all the validations are successful.
@@ -110,7 +110,6 @@ let displayDetailsJson = localStorage.getItem('Details');
 let displayDetailsObject = JSON.parse(displayDetailsJson);
 
 function displayBasicDetails() {
-
   //if localstorage having any other site data, how to handle that??
 
   const displayBasicDetailsContainer = document.createElement('div');
