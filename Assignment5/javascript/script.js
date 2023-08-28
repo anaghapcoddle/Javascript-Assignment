@@ -63,11 +63,10 @@ function formValidate(event) {
   }
 
   if (valid === true) {
-    localStorage.setItem('Name', name.value);
-    localStorage.setItem('Phone', phone.value);
-    localStorage.setItem('Place', place.value);
-    localStorage.setItem('Company', company.value);
-    localStorage.setItem('Pincode', pincode.value);
+    let storeAsObject = { Name: name.value, Phone: phone.value, Place: place.value, Company: company.value, Pincode: pincode.value };
+    let storeAsJsonString = JSON.stringify(storeAsObject);
+    localStorage.setItem('Details', storeAsJsonString);
+
     const inputToClear = document.querySelectorAll(".form-input-space");
     inputToClear.forEach((element) => {
       element.value = "";
@@ -84,13 +83,17 @@ validationForm.addEventListener('submit', formValidate);
 /*e. Make a prepopulate button, which when clicked will populate the
  form with values in the local storage if it exists, otherwise, the button will be disabled. */
 
+let retrievedname;
+
 function prepopulateDetails() {
   // get getElementById() on top and use the names here
-  name.value = localStorage.getItem('Name', name.value);
-  phone.value = localStorage.getItem('Phone', phone.value);
-  place.value = localStorage.getItem('Place', place.value);
-  company.value = localStorage.getItem('Company', company.value);
-  pincode.value = localStorage.getItem('Pincode', pincode.value);
+  let retrievedJsonString = localStorage.getItem('Details');
+  let retrievedObject = JSON.parse(retrievedJsonString);
+  name.value = retrievedObject.Name;
+  phone.value = retrievedObject.Phone;
+  place.value = retrievedObject.Place;
+  company.value = retrievedObject.Company;
+  pincode.value = retrievedObject.Pincode;
 }
 
 prepopulateBtn.addEventListener('click', prepopulateDetails);
@@ -103,16 +106,31 @@ const displayBasicDetailsBtn = document.createElement('button');
 displayBasicDetailsBtn.innerText = 'Display';
 document.body.appendChild(displayBasicDetailsBtn);
 
+let displayDetailsJson = localStorage.getItem('Details');
+let displayDetailsObject = JSON.parse(displayDetailsJson);
+
 function displayBasicDetails() {
+
   //if localstorage having any other site data, how to handle that??
-  for (let i = 0; i < localStorage.length; i += 1) {
-    const displayBasicDetailsContainer = document.createElement('div');
-    document.body.appendChild(displayBasicDetailsContainer);
-    const key = localStorage.key(i);
-    const value = localStorage.getItem(key);
-    const node = document.createTextNode(`${key} : \n ${value} `);
-    displayBasicDetailsContainer.appendChild(node);
-  }
+
+  const displayBasicDetailsContainer = document.createElement('div');
+  document.body.appendChild(displayBasicDetailsContainer);
+
+  let displayName = displayDetailsObject.Name;
+  displayBasicDetailsContainer.insertAdjacentHTML('beforeend', 'Name: ' + displayName);
+  displayBasicDetailsContainer.insertAdjacentHTML('beforeend', '<p>');
+  let displayPhone = displayDetailsObject.Phone;
+  displayBasicDetailsContainer.insertAdjacentHTML('beforeend', 'Phone: ' + displayPhone);
+  displayBasicDetailsContainer.insertAdjacentHTML('beforeend', '<p>');
+  let displayPlace = displayDetailsObject.Place;
+  displayBasicDetailsContainer.insertAdjacentHTML('beforeend', 'Place: ' + displayPlace);
+  displayBasicDetailsContainer.insertAdjacentHTML('beforeend', '<p>');
+  let displayCompany = displayDetailsObject.Company;
+  displayBasicDetailsContainer.insertAdjacentHTML('beforeend', 'Company: ' + displayCompany);
+  displayBasicDetailsContainer.insertAdjacentHTML('beforeend', '<p>');
+  let displayPincode = displayDetailsObject.Pincode;
+  displayBasicDetailsContainer.insertAdjacentHTML('beforeend', 'Pincode: ' + displayPincode);
+  displayBasicDetailsContainer.insertAdjacentHTML('beforeend', '<p>');
 }
 displayBasicDetailsBtn.addEventListener('click', displayBasicDetails);
 
