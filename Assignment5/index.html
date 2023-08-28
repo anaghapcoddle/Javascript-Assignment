@@ -10,33 +10,33 @@
 
 <body>
     <h1>Fill this form.</h1>
-    <form>
+    <form id="validationForm">
         <div class="form-item">
             <label for="name">Enter your name: </label>
-            <input type="text" name="name" id="name">
+            <input type="text" name="name" id="name" class="form-input-space">
             <div id="nameErrorContainer"></div>
         </div>
         <div class="form-item">
             <label for="phone">Enter your phone number: </label>
-            <input type="text" name="phone" id="phone">
+            <input type="text" name="phone" id="phone" class="form-input-space">
             <div id="phoneErrorContainer"></div>
         </div>
         <div class="form-item">
             <label for="place">Enter your place: </label>
-            <input type="text" name="place" id="place">
+            <input type="text" name="place" id="place" class="form-input-space">
             <div id="placeErrorContainer"></div>
         </div>
         <div class="form-item">
             <label for="company">Enter your company name: </label>
-            <input type="text" name="company" id="company">
+            <input type="text" name="company" id="company" class="form-input-space">
             <div id="companyErrorContainer"></div>
         </div>
         <div class="form-item">
             <label for="pincode">Enter your pincode: </label>
-            <input type="text" name="pincode" id="pincode">
+            <input type="text" name="pincode" id="pincode" class="form-input-space">
             <div id="pincodeErrorContainer"></div>
         </div>
-        <button id="formSubmitBtn" name="formSubmitBtn" type="button">Submit</button>
+        <input type="submit" id="formSubmitBtn" name="formSubmitBtn">
         <button id="prepopulateBtn" name="prepopulateBtn" type="button">Prepopulate</button>
     </form>
     <script type="text/javascript" src="./javascript/script.js"></script>

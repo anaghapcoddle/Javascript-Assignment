@@ -1,12 +1,11 @@
 form{
-    display: table;
+  display: table;
 }
 
 .form-item{
-    display: table-row;
+  display: table-row;
 }
 
 label,input {
-  display: table-cell;
+display: table-cell;
 }
-
