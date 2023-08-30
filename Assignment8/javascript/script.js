@@ -9,6 +9,7 @@ xhr.onreadystatechange = function () {
     const dataList = Object.values(mydetails);
     dataList.forEach((data) => {
       const divElement = document.createElement('div');
+      divElement.setAttribute('class', 'cell');
       divElement.textContent = data;
       document.getElementById('details-div').appendChild(divElement);
     });
